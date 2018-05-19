@@ -143,7 +143,8 @@
     
     for (int i = 0; i < self.wavesArray.count; i++) {
         // 画波浪线的路径
-        UIBezierPath *wavePath = [UIBezierPath bezierPath];
+        // 使用CGPath
+        CGMutablePathRef wavePath = CGPathCreateMutable();
         // Progress is a value between 1.0 and -0.5, determined by the current wave idx, which is used to alter the wave's amplitude.
         // 计算波浪线的一个振幅的强度
         CGFloat progress = 1.0f - (CGFloat)i / self.numberOfWaves;
@@ -158,15 +159,16 @@
             CGFloat y = (scaling * maxAmplitude * normedAmplitude) * sin((2 * M_PI * (x / viewWidth) * self.frequency) + self.phase) + (viewHeight * 0.5);
             
             if (x == 0) { // 表示刚开始画波浪线
-                [wavePath moveToPoint:CGPointMake(x, y)];
+                CGPathMoveToPoint(wavePath, nil, x, y);
             } else {
-                [wavePath addLineToPoint:CGPointMake(x, y)];
+                CGPathAddLineToPoint(wavePath, nil, x, y);
             }
             
         }
         
         CAShapeLayer *waveLine = [self.wavesArray objectAtIndex:i];
-        waveLine.path = [wavePath CGPath];
+        waveLine.path = wavePath;
+        CGPathRelease(wavePath);
     }
     
 }
