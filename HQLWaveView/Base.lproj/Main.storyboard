@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-GX-M5o">
+                                <rect key="frame" x="171.5" y="533" width="31" height="30"/>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stopButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5XI-xn-Nlm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7T-wm-5e3">
+                                <rect key="frame" x="171" y="483" width="32" height="30"/>
+                                <state key="normal" title="start"/>
+                                <connections>
+                                    <action selector="startButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GuI-7d-LDL"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bw1-oz-gki" customClass="HQLWaveView">
+                                <rect key="frame" x="0.0" y="258.5" width="375" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="ASQ-WD-0ai"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WBG-GX-M5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2rV-S0-rWw"/>
+                            <constraint firstItem="c7T-wm-5e3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PrR-ZN-sg4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WBG-GX-M5o" secondAttribute="bottom" constant="104" id="ZnK-0A-Aae"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="izh-lu-D3A"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfk-lL-E6q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bw1-oz-gki" secondAttribute="trailing" id="uom-yq-Atc"/>
+                            <constraint firstItem="WBG-GX-M5o" firstAttribute="top" secondItem="c7T-wm-5e3" secondAttribute="bottom" constant="20" id="y1X-86-ofx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="startButton" destination="c7T-wm-5e3" id="V2K-P4-0ew"/>
+                        <outlet property="stopButton" destination="WBG-GX-M5o" id="Auf-G7-Yde"/>
+                        <outlet property="waveView" destination="bw1-oz-gki" id="oK9-dX-kHY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
