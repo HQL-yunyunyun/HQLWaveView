@@ -35,30 +35,72 @@
                                 <rect key="frame" x="0.0" y="258.5" width="375" height="150"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="ASQ-WD-0ai"/>
+                                    <constraint firstAttribute="height" constant="150" id="yAg-q8-6fj"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-GK-RQg">
+                                <rect key="frame" x="136" y="90" width="103" height="30"/>
+                                <state key="normal" title="start animation"/>
+                                <connections>
+                                    <action selector="startAnimationButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mH7-sz-Gbe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U9-eV-OEL">
+                                <rect key="frame" x="136.5" y="140" width="101" height="30"/>
+                                <state key="normal" title="stop animation"/>
+                                <connections>
+                                    <action selector="stopAnimationButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KoX-GE-qnn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqd-YV-Ghy">
+                                <rect key="frame" x="146.5" y="573" width="81" height="30"/>
+                                <state key="normal" title="start record"/>
+                                <connections>
+                                    <action selector="startRecordButtonClic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Pu-AV-tFB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-AU-hXD">
+                                <rect key="frame" x="147.5" y="613" width="79" height="30"/>
+                                <state key="normal" title="stop record"/>
+                                <connections>
+                                    <action selector="stopRecordButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oUX-ZM-gLZ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WBG-GX-M5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2rV-S0-rWw"/>
-                            <constraint firstItem="c7T-wm-5e3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PrR-ZN-sg4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WBG-GX-M5o" secondAttribute="bottom" constant="104" id="ZnK-0A-Aae"/>
-                            <constraint firstItem="bw1-oz-gki" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="izh-lu-D3A"/>
-                            <constraint firstItem="bw1-oz-gki" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pfk-lL-E6q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bw1-oz-gki" secondAttribute="trailing" id="uom-yq-Atc"/>
-                            <constraint firstItem="WBG-GX-M5o" firstAttribute="top" secondItem="c7T-wm-5e3" secondAttribute="bottom" constant="20" id="y1X-86-ofx"/>
+                            <constraint firstItem="c7T-wm-5e3" firstAttribute="top" secondItem="bw1-oz-gki" secondAttribute="bottom" constant="74.5" id="82K-sO-W7R"/>
+                            <constraint firstItem="Wjq-GK-RQg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="CHI-QB-APe"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CoC-nj-5TV"/>
+                            <constraint firstItem="Bqd-YV-Ghy" firstAttribute="top" secondItem="WBG-GX-M5o" secondAttribute="bottom" constant="10" id="ELM-uA-zfm"/>
+                            <constraint firstItem="Bqd-YV-Ghy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GhL-7R-nhl"/>
+                            <constraint firstItem="WBG-GX-M5o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I5W-g8-xTe"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PMp-x3-PA0"/>
+                            <constraint firstItem="Cds-AU-hXD" firstAttribute="top" secondItem="Bqd-YV-Ghy" secondAttribute="bottom" constant="10" id="XxH-sc-T3a"/>
+                            <constraint firstItem="1U9-eV-OEL" firstAttribute="top" secondItem="Wjq-GK-RQg" secondAttribute="bottom" constant="20" id="fId-iF-nvh"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fWi-a2-WDJ"/>
+                            <constraint firstItem="WBG-GX-M5o" firstAttribute="top" secondItem="c7T-wm-5e3" secondAttribute="bottom" constant="20" id="iqV-f6-JjD"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j8S-jH-Hgg"/>
+                            <constraint firstItem="1U9-eV-OEL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jtf-ZM-vlk"/>
+                            <constraint firstItem="Wjq-GK-RQg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qz8-0f-BTu"/>
+                            <constraint firstItem="c7T-wm-5e3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t6J-gR-bHn"/>
+                            <constraint firstItem="Cds-AU-hXD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLo-R9-tIZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="startAnimationButton" destination="Wjq-GK-RQg" id="3Ds-Hu-xfH"/>
                         <outlet property="startButton" destination="c7T-wm-5e3" id="V2K-P4-0ew"/>
+                        <outlet property="startRecordButton" destination="Bqd-YV-Ghy" id="cFy-bN-Ehe"/>
+                        <outlet property="stopAnimationButton" destination="1U9-eV-OEL" id="4PF-mh-ins"/>
                         <outlet property="stopButton" destination="WBG-GX-M5o" id="Auf-G7-Yde"/>
+                        <outlet property="stopRecordButton" destination="Cds-AU-hXD" id="7KJ-Ho-MtZ"/>
                         <outlet property="waveView" destination="bw1-oz-gki" id="oK9-dX-kHY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="64.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>

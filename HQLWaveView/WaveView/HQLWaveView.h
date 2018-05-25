@@ -23,6 +23,12 @@
  线的长度默认为 View 的 width
  */
 
+/*
+ https://zhangbuhuai.com/layer-geometry-in-ios/
+ CABasicAnimation 是CALayer 动画的一种方式，主要是改变某一key的值，而position 和 View的 center 可以看为同一个属性，都是表达位置。
+ 然后CALayer在没有设置frame的时候，position的值为{0, 0} ---- 这个是不影响 path 的显示的。所以在做 CABasicAnimation 的时候，要注意 CALayer 的frame值。
+ */
+
 @interface HQLWaveView : UIView
 
 /**
@@ -102,5 +108,15 @@
  结束动画 --- wave都将移除
  */
 - (void)stopAnimate;
+
+/**
+ 开始动画 --- 同时有一个开场动画
+ */
+- (void)startAnimateWithOpeningAnimation;
+
+/**
+ 结束动画 --- 同时有一个散场动画
+ */
+- (void)stopAnimateWithEndingAnimation;
 
 @end

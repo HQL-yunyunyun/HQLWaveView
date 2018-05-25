@@ -18,6 +18,10 @@
 @property (nonatomic, weak) IBOutlet HQLWaveView *waveView;
 
 @property (nonatomic, strong) AVAudioRecorder *recorder;
+@property (weak, nonatomic) IBOutlet UIButton *startAnimationButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopAnimationButton;
+@property (weak, nonatomic) IBOutlet UIButton *startRecordButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopRecordButton;
 
 @end
 
@@ -28,9 +32,6 @@
     
     [self setupWaveView];
     [self setupRecorder];
-    
-    // 默认开启waveView的动画
-    [self.waveView startAnimate];
 }
 
 - (void)setupWaveView {
@@ -49,6 +50,22 @@
 }
 
 - (IBAction)startButtonClick:(id)sender {
+    [self.waveView startAnimate];
+}
+
+- (IBAction)startAnimationButtonClick:(id)sender {
+    [self.waveView startAnimateWithOpeningAnimation];
+}
+
+- (IBAction)stopAnimationButtonClick:(id)sender {
+    [self.waveView stopAnimateWithEndingAnimation];
+}
+
+- (IBAction)stopButtonClick:(id)sender {
+    [self.waveView stopAnimate];
+}
+
+- (IBAction)startRecordButtonClic:(id)sender {
     if (self.recorder.isRecording) {
         return;
     }
@@ -58,9 +75,10 @@
     [self.recorder record];
 }
 
-- (IBAction)stopButtonClick:(id)sender {
+- (IBAction)stopRecordButtonClick:(id)sender {
     [self.recorder stop];
 }
+
 
 -(void)setupRecorder
 {
