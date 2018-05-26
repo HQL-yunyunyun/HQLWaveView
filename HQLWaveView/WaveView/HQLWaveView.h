@@ -95,14 +95,24 @@
 @property (nonatomic, copy) CGFloat(^waveLevelCallback)(HQLWaveView *waveView);
 
 /**
- waveView 开始动画回调
+ waveView 动画开始的回调
  */
 @property (nonatomic, copy) void(^waveDidStartAnimateCallback)(HQLWaveView *waveView);
 
 /**
- waveView 结束动画回调
+ waveView 动画结束的回调
  */
 @property (nonatomic, copy) void(^waveDidEndAnimateCallback)(HQLWaveView *waveView);
+
+/**
+ waveView 开场动画结束的回调
+ */
+@property (nonatomic, copy) void(^waveViewBeginAnimationDidEndAnimateCallback)(HQLWaveView *waveView);
+
+/**
+ waveView 散场动画结束的回调
+ */
+@property (nonatomic, copy) void(^waveViewEndAnimationDidEndAnimateCallback)(HQLWaveView *waveView);
 
 /**
  是否在动画中

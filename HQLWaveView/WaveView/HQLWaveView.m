@@ -505,10 +505,21 @@
         // 开场动画完成
         if (_isBeginWithAnimation) {
             _isBeginWithAnimation = NO;
+            
+            // 回调
+            if (self.waveViewBeginAnimationDidEndAnimateCallback) {
+                self.waveViewBeginAnimationDidEndAnimateCallback(self);
+            }
+            
             [self startAnimate];
         }
         if (_isEndWithAnimation) {
             _isEndWithAnimation = NO;
+            
+            // 回调
+            if (self.waveViewEndAnimationDidEndAnimateCallback) {
+                self.waveViewEndAnimationDidEndAnimateCallback(self);
+            }
             // 移除圆点和线
             [self removeArrayLayer:self.roundLayerArray];
             [self removeArrayLayer:self.lineLayerArray];
