@@ -95,6 +95,16 @@
 @property (nonatomic, copy) CGFloat(^waveLevelCallback)(HQLWaveView *waveView);
 
 /**
+ waveView 开始动画回调
+ */
+@property (nonatomic, copy) void(^waveDidStartAnimateCallback)(HQLWaveView *waveView);
+
+/**
+ waveView 结束动画回调
+ */
+@property (nonatomic, copy) void(^waveDidEndAnimateCallback)(HQLWaveView *waveView);
+
+/**
  是否在动画中
  */
 @property (nonatomic, assign, readonly, getter=isAnimating) BOOL animating;

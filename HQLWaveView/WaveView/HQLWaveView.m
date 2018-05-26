@@ -271,6 +271,11 @@
         }
     }
     
+    
+    // 回调 ---
+    if (self.waveDidStartAnimateCallback) {
+        self.waveDidStartAnimateCallback(self);
+    }
 }
 
 - (void)stopAnimate {
@@ -299,6 +304,10 @@
 - (void)removeArrayLayer:(NSMutableArray *)layerArray {
     [layerArray makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
     [layerArray removeAllObjects];
+    
+    if (self.waveDidEndAnimateCallback) {
+        self.waveDidEndAnimateCallback(self);
+    }
 }
 
 - (void)removeWavesLayerAndDisplay {
