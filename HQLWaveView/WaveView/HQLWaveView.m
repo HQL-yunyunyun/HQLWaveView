@@ -8,10 +8,11 @@
 
 #import "HQLWaveView.h"
 #import "HQLWeakTarget.h"
+#import "HQLAnimationDelegateObject.h"
 
 #define kAnimationDefaultTime 2
 
-@interface HQLWaveView () <CAAnimationDelegate>
+@interface HQLWaveView () <HQLAnimationDelegate>
 
 /**
  当前振幅强度
@@ -373,6 +374,7 @@
         waveLine.path = wavePath;
         CGPathRelease(wavePath);
     }
+    
 }
 
 #pragma mark - calayer animation method
@@ -391,7 +393,10 @@
     animation.removedOnCompletion = NO;
     animation.duration = animationDuration;
     animation.fillMode = kCAFillModeForwards;
-    animation.delegate = self;
+    // delegate
+    HQLAnimationDelegateObject *obj = [[HQLAnimationDelegateObject alloc] init];
+    obj.delegate = self;
+    animation.delegate = obj;
     
     CGPoint toValue = CGPointZero;
     CGFloat distance = 0;
@@ -427,7 +432,10 @@
     animation.removedOnCompletion = NO;
     animation.duration = animationDuration;
     animation.fillMode = kCAFillModeForwards;
-    animation.delegate = self;
+    // delegate
+    HQLAnimationDelegateObject *obj = [[HQLAnimationDelegateObject alloc] init];
+    obj.delegate = self;
+    animation.delegate = obj;
     
     CGPoint toValue = CGPointZero;
     CGFloat distance = 0;
@@ -458,7 +466,10 @@
     animation.removedOnCompletion = NO;
     animation.duration = animationDuration;
     animation.fillMode = kCAFillModeForwards;
-    animation.delegate = self;
+    // delegate
+    HQLAnimationDelegateObject *obj = [[HQLAnimationDelegateObject alloc] init];
+    obj.delegate = self;
+    animation.delegate = obj;
     
     UIBezierPath *toValue = [[UIBezierPath alloc] init];
     
@@ -488,7 +499,7 @@
     return animation;
 }
 
-#pragma mark - CAAnimationDelegate
+#pragma mark - HQLAnimationDelegate
 
 /*
  判断是否是动画中的逻辑 --- 设置self.animationEndCount 的个数为当前的动画数
@@ -496,7 +507,7 @@
  当 self.animationEndCount 等于0，则表明当前的动画已完成
  */
 
-- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+- (void)hql_animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     self.animationEndCount--;
     if (self.animationEndCount == 0) {
         

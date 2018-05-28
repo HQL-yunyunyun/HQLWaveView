@@ -16,6 +16,8 @@
 		0D29E50220AD32FD00946E9F /* HQLWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E50120AD32FD00946E9F /* HQLWaveView.m */; };
 		0D29E50520AD6EC100946E9F /* HQLWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E50420AD6EC100946E9F /* HQLWeakTarget.m */; };
 		0D29E52E20AD8B4B00946E9F /* HQLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D29E52D20AD8B4600946E9F /* HQLTimer.m */; };
+		0DCB084320BBDB2400416B35 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB084220BBDB2400416B35 /* RootViewController.m */; };
+		0DCB084620BBEBCD00416B35 /* HQLAnimationDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB084520BBEBCD00416B35 /* HQLAnimationDelegateObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,10 @@
 		0D29E50420AD6EC100946E9F /* HQLWeakTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLWeakTarget.m; sourceTree = "<group>"; };
 		0D29E52C20AD8B4600946E9F /* HQLTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQLTimer.h; sourceTree = "<group>"; };
 		0D29E52D20AD8B4600946E9F /* HQLTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLTimer.m; sourceTree = "<group>"; };
+		0DCB084120BBDB2400416B35 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		0DCB084220BBDB2400416B35 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		0DCB084420BBEBCD00416B35 /* HQLAnimationDelegateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQLAnimationDelegateObject.h; sourceTree = "<group>"; };
+		0DCB084520BBEBCD00416B35 /* HQLAnimationDelegateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLAnimationDelegateObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 				0D29E4EA20AD32DB00946E9F /* AppDelegate.m */,
 				0D29E4EC20AD32DB00946E9F /* ViewController.h */,
 				0D29E4ED20AD32DB00946E9F /* ViewController.m */,
+				0DCB084120BBDB2400416B35 /* RootViewController.h */,
+				0DCB084220BBDB2400416B35 /* RootViewController.m */,
 				0D29E4EF20AD32DB00946E9F /* Main.storyboard */,
 				0D29E4F220AD32DB00946E9F /* Assets.xcassets */,
 				0D29E4F420AD32DB00946E9F /* LaunchScreen.storyboard */,
@@ -89,6 +97,8 @@
 				0D29E50120AD32FD00946E9F /* HQLWaveView.m */,
 				0D29E50320AD6EC100946E9F /* HQLWeakTarget.h */,
 				0D29E50420AD6EC100946E9F /* HQLWeakTarget.m */,
+				0DCB084420BBEBCD00416B35 /* HQLAnimationDelegateObject.h */,
+				0DCB084520BBEBCD00416B35 /* HQLAnimationDelegateObject.m */,
 			);
 			path = WaveView;
 			sourceTree = "<group>";
@@ -174,6 +184,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D29E4EE20AD32DB00946E9F /* ViewController.m in Sources */,
+				0DCB084620BBEBCD00416B35 /* HQLAnimationDelegateObject.m in Sources */,
+				0DCB084320BBDB2400416B35 /* RootViewController.m in Sources */,
 				0D29E4F920AD32DB00946E9F /* main.m in Sources */,
 				0D29E50520AD6EC100946E9F /* HQLWeakTarget.m in Sources */,
 				0D29E52E20AD8B4B00946E9F /* HQLTimer.m in Sources */,
