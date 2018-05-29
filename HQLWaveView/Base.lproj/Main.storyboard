@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="T1u-DE-nRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T1u-DE-nRe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,19 +13,23 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qcf-GR-Jo4"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Gk-Nh-R8P"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBG-GX-M5o">
-                                <rect key="frame" x="171.5" y="533" width="31" height="30"/>
+                                <rect key="frame" x="172" y="533" width="31" height="30"/>
                                 <state key="normal" title="stop"/>
                                 <connections>
                                     <action selector="stopButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5XI-xn-Nlm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7T-wm-5e3">
-                                <rect key="frame" x="171" y="483" width="32" height="30"/>
+                                <rect key="frame" x="171.5" y="483" width="32" height="30"/>
                                 <state key="normal" title="start"/>
                                 <connections>
                                     <action selector="startButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GuI-7d-LDL"/>
@@ -39,28 +43,28 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjq-GK-RQg">
-                                <rect key="frame" x="136" y="134" width="103" height="30"/>
+                                <rect key="frame" x="136" y="94" width="103" height="30"/>
                                 <state key="normal" title="start animation"/>
                                 <connections>
                                     <action selector="startAnimationButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mH7-sz-Gbe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1U9-eV-OEL">
-                                <rect key="frame" x="136.5" y="184" width="101" height="30"/>
+                                <rect key="frame" x="137" y="144" width="101" height="30"/>
                                 <state key="normal" title="stop animation"/>
                                 <connections>
                                     <action selector="stopAnimationButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KoX-GE-qnn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqd-YV-Ghy">
-                                <rect key="frame" x="146.5" y="573" width="81" height="30"/>
+                                <rect key="frame" x="147" y="573" width="81" height="30"/>
                                 <state key="normal" title="start record"/>
                                 <connections>
                                     <action selector="startRecordButtonClic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Pu-AV-tFB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cds-AU-hXD">
-                                <rect key="frame" x="147.5" y="613" width="79" height="30"/>
+                                <rect key="frame" x="148" y="613" width="79" height="30"/>
                                 <state key="normal" title="stop record"/>
                                 <connections>
                                     <action selector="stopRecordButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oUX-ZM-gLZ"/>
@@ -70,7 +74,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c7T-wm-5e3" firstAttribute="top" secondItem="bw1-oz-gki" secondAttribute="bottom" constant="74.5" id="82K-sO-W7R"/>
-                            <constraint firstItem="Wjq-GK-RQg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="CHI-QB-APe"/>
+                            <constraint firstItem="Wjq-GK-RQg" firstAttribute="top" secondItem="qcf-GR-Jo4" secondAttribute="bottom" constant="30" id="CHI-QB-APe"/>
                             <constraint firstItem="bw1-oz-gki" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CoC-nj-5TV"/>
                             <constraint firstItem="Bqd-YV-Ghy" firstAttribute="top" secondItem="WBG-GX-M5o" secondAttribute="bottom" constant="10" id="ELM-uA-zfm"/>
                             <constraint firstItem="Bqd-YV-Ghy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GhL-7R-nhl"/>
@@ -78,15 +82,14 @@
                             <constraint firstItem="bw1-oz-gki" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PMp-x3-PA0"/>
                             <constraint firstItem="Cds-AU-hXD" firstAttribute="top" secondItem="Bqd-YV-Ghy" secondAttribute="bottom" constant="10" id="XxH-sc-T3a"/>
                             <constraint firstItem="1U9-eV-OEL" firstAttribute="top" secondItem="Wjq-GK-RQg" secondAttribute="bottom" constant="20" id="fId-iF-nvh"/>
-                            <constraint firstItem="bw1-oz-gki" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fWi-a2-WDJ"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="fWi-a2-WDJ"/>
                             <constraint firstItem="WBG-GX-M5o" firstAttribute="top" secondItem="c7T-wm-5e3" secondAttribute="bottom" constant="20" id="iqV-f6-JjD"/>
-                            <constraint firstItem="bw1-oz-gki" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="j8S-jH-Hgg"/>
+                            <constraint firstItem="bw1-oz-gki" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="j8S-jH-Hgg"/>
                             <constraint firstItem="1U9-eV-OEL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jtf-ZM-vlk"/>
                             <constraint firstItem="Wjq-GK-RQg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qz8-0f-BTu"/>
                             <constraint firstItem="c7T-wm-5e3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t6J-gR-bHn"/>
                             <constraint firstItem="Cds-AU-hXD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLo-R9-tIZ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="elY-NR-vGB"/>
                     <connections>
@@ -107,12 +110,16 @@
         <scene sceneID="vF0-nf-NDr">
             <objects>
                 <viewController id="ZW3-JG-gRy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="leh-fy-8vs"/>
+                        <viewControllerLayoutGuide type="bottom" id="nQI-f7-Ngs"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2hn-x2-chM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBx-Rz-YEG">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="push" id="LG3-Il-VxW"/>
@@ -124,7 +131,6 @@
                             <constraint firstItem="JBx-Rz-YEG" firstAttribute="centerY" secondItem="2hn-x2-chM" secondAttribute="centerY" id="a5c-jd-keA"/>
                             <constraint firstItem="JBx-Rz-YEG" firstAttribute="centerX" secondItem="2hn-x2-chM" secondAttribute="centerX" id="uNX-67-8AJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gIN-0T-l6X"/>
                     </view>
                     <navigationItem key="navigationItem" id="rDS-eQ-jlQ"/>
                 </viewController>

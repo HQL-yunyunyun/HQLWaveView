@@ -325,6 +325,10 @@
  */
 - (void)drawWave {
     
+    /*
+     2018.5.29 : 因为在两边添加了两个圆点，目前计算波浪线的算法是截取两端，即没有做出调整算出来的曲线是以0到View.width为标准，那么就会表现为圆点那不是起点，所以这样显示就会有问题。
+     */
+    
     // 波浪线 --- 中间高两边低
     
     CGFloat viewHeight = CGRectGetHeight(self.frame);
