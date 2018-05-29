@@ -10,7 +10,7 @@
 #import "HQLWeakTarget.h"
 #import "HQLAnimationDelegateObject.h"
 
-#define kAnimationDefaultTime 2
+#define kAnimationDefaultTime 0.3
 
 @interface HQLWaveView () <HQLAnimationDelegate>
 
@@ -327,12 +327,15 @@
     
     /*
      2018.5.29 : 因为在两边添加了两个圆点，目前计算波浪线的算法是截取两端，即没有做出调整算出来的曲线是以0到View.width为标准，那么就会表现为圆点那不是起点，所以这样显示就会有问题。
+     做出修改:
+     当计算的时候，以x为0，width就是 view.width - 两个圆点的直径，这样来计算y，然后在画的时候，x再向右平移 一个圆的直径.
      */
     
+    // 圆的直径
+    CGFloat roundWidth = [self roundPointWidth] - 1;
     // 波浪线 --- 中间高两边低
-    
     CGFloat viewHeight = CGRectGetHeight(self.frame);
-    CGFloat viewWidth = CGRectGetWidth(self.frame);
+    CGFloat viewWidth = CGRectGetWidth(self.frame) - 2 * roundWidth;
     CGFloat waveMid = viewWidth * 0.5;
     CGFloat maxAmplitude = viewHeight - (self.primaryWaveWidth * 2); // 最大的振幅
     
@@ -351,25 +354,28 @@
         CGFloat progress = 1.0f - (CGFloat)i / self.numberOfWaves;
         CGFloat normedAmplitude = (1.5f * progress - 0.5f) * self.amplitude;
         
-        CGFloat beginX = [self roundPointWidth] - self.primaryWaveWidth * 0.5;
-        CGFloat maxX = viewWidth - [self roundPointWidth] + self.primaryWaveWidth * 0.5;
+        CGFloat beginX = 0;
+        CGFloat maxX = viewWidth;
         
         for (CGFloat x = beginX; x < (maxX + self.density); x += self.density) {
             
-            // 将超出 maxX 的x 都设置成 maxX
+            // 超出 maxX 都为maxX
             if (x >= maxX) {
                 x = maxX;
             }
+            
             // We use a parable to scale the sinus wave, that has its peak in the middle of the view.
             // 这个比例会使波浪线的振幅中间高 --- 两边小
             CGFloat scaling = -pow(x / waveMid - 1, 2) + 1;
             // 显示在中间
             CGFloat y = (scaling * maxAmplitude * normedAmplitude) * sin((2 * M_PI * (x / viewWidth) * self.frequency) + self.phase) + (viewHeight * 0.5);
             
+            // 计算完y之后，x都向右平移一个圆的直径
+            CGFloat drawX = x + roundWidth;
             if (x == beginX) { // 表示刚开始画波浪线
-                CGPathMoveToPoint(wavePath, nil, x, y);
+                CGPathMoveToPoint(wavePath, nil, drawX, y);
             } else {
-                CGPathAddLineToPoint(wavePath, nil, x, y);
+                CGPathAddLineToPoint(wavePath, nil, drawX, y);
             }
             
         }
